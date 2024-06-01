@@ -36,3 +36,19 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 7. Get User Data
     - `/api/user?userId=id` GET Request
+
+
+## Schema 
+Here is the schema for the `User` table in table form:
+
+### User Table
+
+| Field      | Type     | Attributes                                |
+|------------|----------|-------------------------------------------|
+| id         | String   | @id @default(auto()) @map("_id") @db.ObjectId |
+| name       | String   |                                           |
+| email      | String   | @unique                                   |
+| createdAt  | DateTime | @default(now())                           |
+| updatedAt  | DateTime | @updatedAt                                |
+| followers  | String[] | @db.ObjectId                              |
+| following  | String[] | @db.ObjectId                              |
